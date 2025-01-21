@@ -1,32 +1,25 @@
-import React, {useMemo} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React from 'react';
+import {View, Text} from 'react-native';
+import {styled} from 'tamagui';
 
 type Props = {
   i: number;
 };
 
-const Item = ({i}: Props) => {
-  const styles = useMemo(() => createStyles('red', 12), []);
+const ItemStyled = styled(View, {
+  borderWidth: '$1',
+  padding: '$4',
+  borderColor: 'blue',
+  gap: '$5',
+});
 
+const Item = ({i}: Props) => {
   return (
-    <View style={styles.item}>
+    <ItemStyled>
       <Text>Title {i}</Text>
       <Text>This is subtitle for item {i}</Text>
-    </View>
+    </ItemStyled>
   );
 };
-
-const createStyles = (color: string, paddding: number) =>
-  StyleSheet.create({
-    root: {
-      height: '50%',
-    },
-    item: {
-      borderColor: color,
-      borderWidth: 1,
-      padding: paddding,
-      gap: 5,
-    },
-  });
 
 export default Item;

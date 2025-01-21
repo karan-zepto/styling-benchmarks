@@ -5,7 +5,7 @@ import React, {
   useState,
 } from 'react';
 import {Button, View} from 'react-native';
-import {TamaguiProvider, createTamagui} from '@tamagui/core';
+import {TamaguiProvider, createTamagui} from 'tamagui';
 import {defaultConfig} from '@tamagui/config/v4';
 import Home from './components/Home';
 import LogBox from './LogBox';
