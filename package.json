@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@tamagui/config": "^1.122.6",
+    "@tamagui/core": "^1.122.6",
     "react": "18.3.1",
     "react-native": "0.77.0",
     "zustand": "^5.0.3"
