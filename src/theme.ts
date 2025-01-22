@@ -19,6 +19,8 @@ const theme = createTheme({
     cardPrimaryBackground: palette.purplePrimary,
   },
   spacing: {
+    x1: 1,
+    x5: 5,
     s: 8,
     m: 16,
     l: 24,

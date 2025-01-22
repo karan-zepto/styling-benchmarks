@@ -1,35 +1,25 @@
-import {useTheme} from '@shopify/restyle';
-import React, {useMemo} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React from 'react';
 import {Theme} from '../theme';
+import {createBox, createText} from '@shopify/restyle';
 
 type Props = {
   i: number;
 };
 
-const Item = ({i}: Props) => {
-  const theme = useTheme<Theme>();
-  const styles = useMemo(() => createStyles(theme), [theme]);
+const View = createBox<Theme>();
+const Text = createText<Theme>();
 
+const Item = ({i}: Props) => {
   return (
-    <View style={styles.item}>
+    <View
+      borderColor={'cardPrimaryBackground'}
+      padding={'m'}
+      gap={'x5'}
+      borderWidth={1}>
       <Text>Title {i}</Text>
       <Text>This is subtitle for item {i}</Text>
     </View>
   );
 };
-
-const createStyles = (theme: Theme) =>
-  StyleSheet.create({
-    root: {
-      height: '50%',
-    },
-    item: {
-      borderColor: theme.colors.cardPrimaryBackground,
-      borderWidth: 1,
-      padding: theme.spacing.m,
-      gap: 5,
-    },
-  });
 
 export default Item;
