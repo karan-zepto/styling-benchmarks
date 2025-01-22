@@ -11,10 +11,11 @@
   },
   "dependencies": {
     "@tamagui/config": "^1.122.6",
+    "android": "^0.0.8",
     "react": "18.3.1",
     "react-native": "0.77.0",
-    "zustand": "^5.0.3",
-    "tamagui": "^1.122.6"
+    "tamagui": "^1.122.6",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

@@ -31,7 +31,7 @@ const App = () => {
       phase,
       actualDuration, // time spent rendering the committed update
     ) => {
-      addLog(`[Native][${phase}] Pass ${count}: ${actualDuration} ms`);
+      addLog(`[Tamagui][${phase}] Pass ${count}: ${actualDuration} ms`);
     },
     [count, addLog],
   );
@@ -43,11 +43,11 @@ const App = () => {
   return (
     <View>
       <Button title="Rerender" onPress={reRender} />
-      <Profiler key={count} id="Home" onRender={onRender}>
-        <TamaguiProvider config={defaultConfig}>
+      <TamaguiProvider config={defaultConfig}>
+        <Profiler key={count} id="Home" onRender={onRender}>
           <Home />
-        </TamaguiProvider>
-      </Profiler>
+        </Profiler>
+      </TamaguiProvider>
       <LogBox />
     </View>
   );

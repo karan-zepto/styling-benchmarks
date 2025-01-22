@@ -7,10 +7,10 @@ type Props = {
 };
 
 const ItemStyled = styled(View, {
-  borderWidth: '$1',
+  borderWidth: 1,
   padding: '$4',
   borderColor: 'blue',
-  gap: '$5',
+  gap: '$2',
 });
 
 const Item = ({i}: Props) => {
