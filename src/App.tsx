@@ -8,6 +8,8 @@ import {Button, View} from 'react-native';
 import Home from './components/Home';
 import LogBox from './LogBox';
 import useLogsStore from './store/useLogsStore';
+import theme from './theme';
+import {ThemeProvider} from '@shopify/restyle';
 
 const App = () => {
   const [count, setCount] = useState(1);
@@ -19,7 +21,7 @@ const App = () => {
       phase,
       actualDuration, // time spent rendering the committed update
     ) => {
-      addLog(`[Native][${phase}] Pass ${count}: ${actualDuration} ms`);
+      addLog(`[Restyle][${phase}] Pass ${count}: ${actualDuration} ms`);
     },
     [count, addLog],
   );
@@ -31,9 +33,11 @@ const App = () => {
   return (
     <View>
       <Button title="Rerender" onPress={reRender} />
-      <Profiler key={count} id="Home" onRender={onRender}>
-        <Home />
-      </Profiler>
+      <ThemeProvider theme={theme}>
+        <Profiler key={count} id="Home" onRender={onRender}>
+          <Home />
+        </Profiler>
+      </ThemeProvider>
       <LogBox />
     </View>
   );
