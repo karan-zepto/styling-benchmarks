@@ -79,7 +79,7 @@ android {
 
     namespace "com.origamiexampleapp"
     defaultConfig {
-        applicationId "com.origamiexampleapp"
+        applicationId "com.origamiexampleapp.tamagui"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
