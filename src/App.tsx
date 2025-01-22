@@ -5,21 +5,11 @@ import React, {
   useState,
 } from 'react';
 import {Button, View} from 'react-native';
-import {TamaguiProvider, createTamagui} from 'tamagui';
-import {defaultConfig} from '@tamagui/config/v4';
+import {TamaguiProvider} from 'tamagui';
 import Home from './components/Home';
 import LogBox from './LogBox';
 import useLogsStore from './store/useLogsStore';
-
-// you usually export this from a tamagui.config.ts file
-const config = createTamagui(defaultConfig);
-
-type Conf = typeof config;
-
-// get nice types
-declare module '@tamagui/core' {
-  interface TamaguiCustomConfig extends Conf {}
-}
+import config from './theme';
 
 const App = () => {
   const [count, setCount] = useState(1);
@@ -43,7 +33,7 @@ const App = () => {
   return (
     <View>
       <Button title="Rerender" onPress={reRender} />
-      <TamaguiProvider config={defaultConfig}>
+      <TamaguiProvider config={config}>
         <Profiler key={count} id="Home" onRender={onRender}>
           <Home />
         </Profiler>

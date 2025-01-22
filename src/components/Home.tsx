@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
 import Item from './Item';
+import {ScrollView} from 'tamagui';
 
 let count = 250;
 let items = Array.from(Array(count).keys());
@@ -10,13 +10,7 @@ const Home = () => {
     return <Item i={i} key={i.toString()} />;
   }, []);
 
-  return <ScrollView style={styles.root}>{items.map(renderItem)}</ScrollView>;
+  return <ScrollView height={'50%'}>{items.map(renderItem)}</ScrollView>;
 };
-
-const styles = StyleSheet.create({
-  root: {
-    height: '50%',
-  },
-});
 
 export default Home;
