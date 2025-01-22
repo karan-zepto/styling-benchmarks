@@ -9,7 +9,7 @@ import {TamaguiProvider} from 'tamagui';
 import Home from './components/Home';
 import LogBox from './LogBox';
 import useLogsStore from './store/useLogsStore';
-import config from './theme';
+import config from '../tamagui.config';
 
 const App = () => {
   const [count, setCount] = useState(1);
