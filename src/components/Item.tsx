@@ -1,12 +1,15 @@
+import {useTheme} from '@shopify/restyle';
 import React, {useMemo} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {Theme} from '../theme';
 
 type Props = {
   i: number;
 };
 
 const Item = ({i}: Props) => {
-  const styles = useMemo(() => createStyles('red', 12), []);
+  const theme = useTheme<Theme>();
+  const styles = useMemo(() => createStyles(theme), [theme]);
 
   return (
     <View style={styles.item}>
@@ -16,15 +19,15 @@ const Item = ({i}: Props) => {
   );
 };
 
-const createStyles = (color: string, paddding: number) =>
+const createStyles = (theme: Theme) =>
   StyleSheet.create({
     root: {
       height: '50%',
     },
     item: {
-      borderColor: color,
+      borderColor: theme.colors.cardPrimaryBackground,
       borderWidth: 1,
-      padding: paddding,
+      padding: theme.spacing.m,
       gap: 5,
     },
   });
