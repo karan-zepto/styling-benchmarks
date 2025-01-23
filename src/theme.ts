@@ -6,7 +6,7 @@ export const lightTheme = {
   },
   margins: {
     sm: 2,
-    md: 4,
+    md: 16,
     lg: 8,
     xl: 12,
   },
@@ -20,7 +20,7 @@ export const darkTheme = {
   },
   margins: {
     sm: 2,
-    md: 4,
+    md: 16,
     lg: 8,
     xl: 12,
   },

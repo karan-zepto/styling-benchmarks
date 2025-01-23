@@ -20,7 +20,8 @@ const App = () => {
       phase,
       actualDuration, // time spent rendering the committed update
     ) => {
-      addLog(`[Native][${phase}] Pass ${count}: ${actualDuration} ms`);
+      if (phase !== 'mount') return;
+      addLog(`[Unistyles][${phase}] Pass ${count}: ${actualDuration} ms`);
     },
     [count, addLog],
   );

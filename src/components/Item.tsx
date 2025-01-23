@@ -11,7 +11,7 @@ const Item = ({i}: Props) => {
 
   return (
     <View style={styles.item}>
-      <Text>{JSON.stringify(styles)}</Text>
+      <Text>Title {i}</Text>
       <Text>This is subtitle for item {i}</Text>
     </View>
   );
