@@ -1,11 +1,14 @@
 import React, {useCallback} from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
+import {ScrollView} from 'react-native';
 import Item from './Item';
+import {createStyleSheet, useStyles} from 'react-native-unistyles';
 
 let count = 250;
 let items = Array.from(Array(count).keys());
 
 const Home = () => {
+  const {styles} = useStyles(stylesheet);
+
   const renderItem = useCallback((i: number) => {
     return <Item i={i} key={i.toString()} />;
   }, []);
@@ -13,10 +16,10 @@ const Home = () => {
   return <ScrollView style={styles.root}>{items.map(renderItem)}</ScrollView>;
 };
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet(() => ({
   root: {
-    height: '50%',
+    height: '48%',
   },
-});
+}));
 
 export default Home;

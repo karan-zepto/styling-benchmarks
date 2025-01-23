@@ -16,7 +16,7 @@ const LogBox = () => {
 
 const styles = StyleSheet.create({
   root: {
-    height: '50%',
+    height: '48%',
     backgroundColor: 'lightgray',
   },
 });

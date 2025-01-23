@@ -1,10 +1,11 @@
+import './unistyles';
 import React, {
   Profiler,
   ProfilerOnRenderCallback,
   useCallback,
   useState,
 } from 'react';
-import {Button, View} from 'react-native';
+import {Button, StatusBar, View} from 'react-native';
 import Home from './components/Home';
 import LogBox from './LogBox';
 import useLogsStore from './store/useLogsStore';
@@ -30,6 +31,7 @@ const App = () => {
 
   return (
     <View>
+      <StatusBar />
       <Button title="Rerender" onPress={reRender} />
       <Profiler key={count} id="Home" onRender={onRender}>
         <Home />
